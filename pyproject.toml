@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "salud-fisica"
+version = "1.0.0"
+description = "Sistema de Gestión de Salud Física - API HTTP (FastAPI + SQLite)"
+authors = ["Equipo Salud Física"]
+readme = "README.md"
+packages = [{ include = "salud_fisica" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.115.0"
+uvicorn = { extras = ["standard"], version = "^0.32.0" }
+pydantic = { extras = ["email"], version = "^2.9.0" }
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.0"
+httpx = "^0.27.0"
+
+[tool.poetry.scripts]
+salud-api = "salud_fisica.api.main:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
